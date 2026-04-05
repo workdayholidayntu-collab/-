@@ -58,8 +58,8 @@ export default async function HomePage() {
           {/* Single prominent CTA */}
           <div className="mt-12">
             <Link href="/countries">
-              <Button className="h-14 gap-3 rounded-2xl px-8 text-base font-semibold shadow-lg shadow-black/10 bg-white text-[var(--brand)] hover:bg-white/90">
-                進入國家知識庫
+              <Button className="h-14 gap-3 rounded-2xl bg-white px-8 text-base font-semibold text-[var(--brand)] shadow-lg shadow-black/10 hover:bg-white/90 hover:text-[var(--brand)]">
+                進入網站
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </Link>
