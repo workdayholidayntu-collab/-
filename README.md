@@ -1,4 +1,4 @@
-# 棲地無界 WHV
+# 棲地無界 Borderless Habitat
 
 棲地無界（WHV）是以台灣視角打造的打工度假知識庫、Realtime 討論區與過來人媒合平台，技術棧使用 Next.js App Router、Supabase、Tailwind CSS 與 shadcn/ui 風格元件。
 
