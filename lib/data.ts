@@ -124,23 +124,30 @@ export async function getHelpersByCountry(slug: string): Promise<Profile[]> {
 }
 
 export async function getCurrentViewer(): Promise<Viewer> {
-  const supabase = await createSupabaseServerClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  // Tolerate missing/invalid Supabase env at runtime so the layout's <Header>
+  // doesn't crash the whole page. Pages that need real data will fail their
+  // own boundary; the chrome stays rendered as logged-out.
+  try {
+    const supabase = await createSupabaseServerClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
 
-  if (!user) return { userId: null, email: null, profile: null }
+    if (!user) return { userId: null, email: null, profile: null }
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("id", user.id)
-    .maybeSingle()
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", user.id)
+      .maybeSingle()
 
-  return {
-    userId: user.id,
-    email: user.email ?? null,
-    profile: (profile as Profile | null) ?? null,
+    return {
+      userId: user.id,
+      email: user.email ?? null,
+      profile: (profile as Profile | null) ?? null,
+    }
+  } catch {
+    return { userId: null, email: null, profile: null }
   }
 }
 
