@@ -31,8 +31,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           Borderless Habitat
         </p>
         <h1 className="heading-editorial mt-4 text-[clamp(2.4rem,5.5vw,4.25rem)] text-[var(--ink)]">
-          真實走過的人，<br className="hidden sm:block" />
-          才寫得出能用的指南。
+          讓每個回來的人，<br className="hidden sm:block" />
+          成為下一個出發者的底氣。
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--muted-ink)]">
           棲地無界整理台灣人海外打工度假的第一手經驗：簽證、找工、住宿、社交。

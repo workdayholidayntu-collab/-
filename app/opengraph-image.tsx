@@ -45,8 +45,8 @@ export default async function Image() {
             flexDirection: "column",
           }}
         >
-          <span>真實走過的人，</span>
-          <span>才寫得出能用的指南。</span>
+          <span>讓每個回來的人，</span>
+          <span>成為下一個出發者的底氣。</span>
         </div>
 
         <div
