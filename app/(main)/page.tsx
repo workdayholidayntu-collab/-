@@ -26,13 +26,12 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   return (
     <div className="space-y-12 sm:space-y-16">
-      <section className="max-w-3xl pt-4 pb-2 sm:pt-8 sm:pb-4">
+      <section className="pt-4 pb-2 sm:pt-8 sm:pb-4">
         <p className="text-[11px] font-bold uppercase tracking-[0.32em] text-[var(--brand)]">
           Borderless Habitat
         </p>
-        <h1 className="heading-editorial mt-4 text-[clamp(2.2rem,4.5vw,3.5rem)] text-[var(--ink)]">
-          讓每個回來的人，<br className="hidden sm:block" />
-          成為下一個出發者的底氣。
+        <h1 className="heading-editorial mt-4 whitespace-nowrap text-[clamp(0.95rem,3.5vw,2.5rem)] text-[var(--ink)]">
+          讓每個回來的人，成為下一個出發者的底氣。
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--muted-ink)]">
           棲地無界整理台灣人海外打工度假的第一手經驗：簽證、找工、住宿、社交。

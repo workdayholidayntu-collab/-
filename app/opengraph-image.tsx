@@ -36,17 +36,15 @@ export default async function Image() {
 
         <div
           style={{
-            fontSize: 92,
+            fontSize: 42,
             fontWeight: 700,
-            lineHeight: 1.1,
-            letterSpacing: "-0.02em",
+            lineHeight: 1.2,
+            letterSpacing: "-0.01em",
             color: "#1a2a3a",
-            display: "flex",
-            flexDirection: "column",
+            whiteSpace: "nowrap",
           }}
         >
-          <span>讓每個回來的人，</span>
-          <span>成為下一個出發者的底氣。</span>
+          讓每個回來的人，成為下一個出發者的底氣。
         </div>
 
         <div

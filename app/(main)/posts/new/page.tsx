@@ -37,8 +37,8 @@ export default async function NewPostPage({ searchParams }: NewPostPageProps) {
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand)]">
             撰寫 · Borderless Habitat
           </p>
-          <h1 className="heading-editorial mt-3 text-[clamp(2rem,4vw,3rem)] text-[var(--ink)]">
-            讓每個回來的人，<br />成為下一個出發者的底氣。
+          <h1 className="heading-editorial mt-3 whitespace-nowrap text-[clamp(0.85rem,1.8vw,1.6rem)] text-[var(--ink)]">
+            讓每個回來的人，成為下一個出發者的底氣。
           </h1>
         </div>
         <div className="rounded-2xl bg-[var(--sand)] p-5 text-sm leading-7 text-[var(--muted-ink)]">
