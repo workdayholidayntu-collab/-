@@ -8,7 +8,7 @@ import { formatDate } from "@/lib/utils"
 export const metadata = { title: "登入" }
 
 interface LoginPageProps {
-  searchParams: Promise<{ error?: string }>
+  searchParams: Promise<{ error?: string; notice?: string }>
 }
 
 const fieldLabel = "block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted-ink)]"
@@ -16,7 +16,7 @@ const fieldInput =
   "w-full border-0 border-b border-[var(--line)] bg-transparent px-0 py-3 text-base text-[var(--ink)] outline-none transition placeholder:text-[var(--muted-ink)]/60 focus:border-[var(--brand)]"
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
-  const { error } = await searchParams
+  const { error, notice } = await searchParams
   const [posts, countries, profiles] = await Promise.all([
     getApprovedPosts(),
     getCountries(),
@@ -53,6 +53,12 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           </h1>
         </div>
 
+        {notice ? (
+          <div className="border-l-2 border-[var(--brand)] bg-[var(--brand)]/10 px-4 py-3 text-sm text-[var(--ink)]">
+            {decodeURIComponent(notice)}
+          </div>
+        ) : null}
+
         {error ? (
           <div className="border-l-2 border-red-400 bg-red-50/70 px-4 py-3 text-sm text-red-700">
             {decodeURIComponent(error)}
@@ -88,12 +94,13 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Button type="submit">使用 Email 登入</Button>
             <span className="text-xs text-[var(--muted-ink)]">或</span>
-            <form action={signInWithGoogleAction}>
-              <Button type="submit" variant="outline">
-                使用 Google 登入
-              </Button>
-            </form>
           </div>
+        </form>
+
+        <form action={signInWithGoogleAction}>
+          <Button type="submit" variant="outline">
+            使用 Google 登入
+          </Button>
         </form>
 
         <p className="text-sm text-[var(--muted-ink)]">
